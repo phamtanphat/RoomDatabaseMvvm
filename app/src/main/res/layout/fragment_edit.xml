@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textviewEditTieude"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="true"
+        android:textColor="#f20"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:text="Sửa sinh viên"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_below="@id/textviewEditTieude"
+        android:hint="Tên sinh viên"
+        android:id="@+id/edittextEditTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_below="@id/edittextEditTen"
+        android:hint="Địa chỉ"
+        android:id="@+id/edittextEditDiachi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:src="@drawable/image_nophoto"
+        android:id="@+id/imageviewEditSinhvien"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/edittextEditDiachi"
+        android:layout_centerHorizontal="true"
+        android:layout_width="250dp"
+        android:layout_height="150dp" />
+
+    <Button
+        android:text="Hủy"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/imageviewEditSinhvien"
+        android:id="@+id/buttonEditHuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="Xác nhận"
+        android:layout_marginRight="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/imageviewEditSinhvien"
+        android:id="@+id/buttonEditXacnhan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

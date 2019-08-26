@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textviewTieude"
+        android:layout_marginTop="20dp"
+        android:textAllCaps="true"
+        android:textColor="#f20"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:text="Thêm sinh viên"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_below="@id/textviewTieude"
+        android:hint="Tên sinh viên"
+        android:id="@+id/edittextTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:layout_below="@id/edittextTen"
+        android:hint="Địa chỉ"
+        android:id="@+id/edittextDiachi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:src="@drawable/image_nophoto"
+        android:id="@+id/imageviewSinhvien"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/edittextDiachi"
+        android:layout_centerHorizontal="true"
+        android:layout_width="250dp"
+        android:layout_height="150dp" />
+
+    <Button
+        android:text="Hủy"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/imageviewSinhvien"
+        android:id="@+id/buttonHuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="Xác nhận"
+        android:layout_marginRight="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/imageviewSinhvien"
+        android:id="@+id/buttonXacnhan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
