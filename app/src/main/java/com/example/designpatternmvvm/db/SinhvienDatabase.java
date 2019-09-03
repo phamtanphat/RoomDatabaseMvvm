@@ -18,7 +18,7 @@ import com.example.designpatternmvvm.db.dao.SinhvienDao;
 import com.example.designpatternmvvm.db.entity.Sinhvienentity;
 
 
-@Database(entities = {Sinhvienentity.class} , version = 1)
+@Database(entities = {Sinhvienentity.class} , version = 1 , exportSchema = false)
 public abstract class SinhvienDatabase extends RoomDatabase {
 
     private static SinhvienDatabase instance;

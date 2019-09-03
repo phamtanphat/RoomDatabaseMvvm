@@ -14,7 +14,6 @@ import com.example.designpatternmvvm.R;
 public class HistoryFragment extends Fragment {
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

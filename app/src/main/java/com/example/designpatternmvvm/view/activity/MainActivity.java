@@ -4,29 +4,24 @@ import androidx.annotation.Nullable;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ProgressBar;
 
 import com.example.designpatternmvvm.R;
 import com.example.designpatternmvvm.base.BaseActivity;
-import com.example.designpatternmvvm.db.entity.Sinhvienentity;
-import com.example.designpatternmvvm.event.Loadingevent;
+import com.example.designpatternmvvm.base.BaseViewModel;
 import com.example.designpatternmvvm.view.adapter.ViewpagerAdapter;
 import com.example.designpatternmvvm.view.fragment.AddFragment;
 import com.example.designpatternmvvm.view.fragment.EditFragment;
 import com.example.designpatternmvvm.view.fragment.HistoryFragment;
 import com.example.designpatternmvvm.view.fragment.ListDataFragment;
-import com.example.designpatternmvvm.viewmodel.Mainviewmodel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import io.reactivex.disposables.CompositeDisposable;
-
-public class MainActivity extends BaseActivity<Mainviewmodel> {
+public class MainActivity extends BaseActivity {
 
     ViewPager mviewPager;
     BottomNavigationView mbottomNavigationView;
-    ProgressBar progressBar;
     ViewpagerAdapter viewpagerAdapter;
+
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_main;
@@ -36,12 +31,11 @@ public class MainActivity extends BaseActivity<Mainviewmodel> {
     public void initView() {
         mbottomNavigationView = findViewById(R.id.bottomnavi);
         mviewPager = findViewById(R.id.viewpager);
-        progressBar = findViewById(R.id.progressbar);
     }
 
     @Override
-    public Mainviewmodel getViewModel() {
-        return new Mainviewmodel(new Loadingevent(progressBar) , getApplication());
+    public BaseViewModel getViewModel() {
+        return new BaseViewModel();
     }
 
     @Override
@@ -49,10 +43,6 @@ public class MainActivity extends BaseActivity<Mainviewmodel> {
         super.onCreate(savedInstanceState);
         setUpViewPager();
 
-        getViewModel().getListSinhvien().observe(this , sinhvienentities -> {
-            Log.d("BBB",sinhvienentities.size() + "");
-        });
-        getViewModel().selectAllsinhvien();
 
 
     }

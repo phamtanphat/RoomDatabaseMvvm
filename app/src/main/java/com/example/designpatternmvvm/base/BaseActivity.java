@@ -20,8 +20,7 @@ public abstract class BaseActivity<T extends BaseViewModel> extends AppCompatAct
         setContentView(getLayoutId());
         initView();
         mViewModel = getViewModel();
-        mViewModel = (T) ViewModelProviders.of(this).get(mViewModel.getClass());
-        mViewModel.onViewModelCreate();
+        getLifecycle().addObserver(mViewModel);
     }
 
     @Override

@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+
 
 import com.example.designpatternmvvm.view.fragment.AddFragment;
 import com.example.designpatternmvvm.view.fragment.EditFragment;
@@ -22,6 +24,7 @@ public class ViewpagerAdapter extends FragmentPagerAdapter {
     public ViewpagerAdapter(FragmentManager fm) {
         super(fm);
     }
+
 
     public void addFragment(Fragment fragment) {
         mFragments.add(fragment);

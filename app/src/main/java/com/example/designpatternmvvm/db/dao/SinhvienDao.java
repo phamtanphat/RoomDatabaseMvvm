@@ -13,6 +13,8 @@ import java.util.List;
 
 import io.reactivex.Completable;
 import io.reactivex.Flowable;
+import io.reactivex.Observable;
+import io.reactivex.Single;
 
 
 @Dao
@@ -31,7 +33,7 @@ public interface SinhvienDao {
     Completable deleteAllSinhvien();
 
     @Query("SELECT * FROM Sinhvien")
-    Flowable<List<Sinhvienentity>> getAllsinhvien();
+    Observable<List<Sinhvienentity>> getAllsinhvien();
 
 
 }

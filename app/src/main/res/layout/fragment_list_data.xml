@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,18 +9,24 @@
     tools:context=".view.fragment.ListDataFragment">
 
     <androidx.appcompat.widget.SearchView
+        android:background="@color/color_primay"
         android:id="@+id/searchview"
-        app:showDividers="none"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
     </androidx.appcompat.widget.SearchView>
-
+    <ProgressBar
+        android:layout_centerInParent="true"
+        android:id="@+id/progressbarDanhsach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
+        tools:listitem="@layout/item_sinhvien"
+        android:layout_below="@id/searchview"
+        android:id="@+id/recyclerviewDanhsach"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </androidx.recyclerview.widget.RecyclerView>
-</LinearLayout>
+</RelativeLayout>

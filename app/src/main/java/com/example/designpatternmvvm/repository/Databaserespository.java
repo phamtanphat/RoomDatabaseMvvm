@@ -11,16 +11,25 @@ import java.util.List;
 
 import io.reactivex.Completable;
 import io.reactivex.Flowable;
+import io.reactivex.Observable;
 
 public class Databaserespository {
+    private static Databaserespository instance = null;
     private SinhvienDao sinhvienDao;
 
 
-    public Databaserespository(Application application) {
+    private Databaserespository(Application application) {
         SinhvienDatabase sinhvienDatabase = SinhvienDatabase.getInstance(application);
         sinhvienDao = sinhvienDatabase.sinhvienDao();
 
     }
+    public  static Databaserespository getInstance(Application application){
+        if (instance == null){
+            instance = new Databaserespository(application);
+        }
+        return instance;
+    }
+
 
     public Completable insert(Sinhvienentity sinhvienentity) {
         return sinhvienDao.insert(sinhvienentity);
@@ -38,7 +47,7 @@ public class Databaserespository {
         return sinhvienDao.deleteAllSinhvien();
     }
 
-    public Flowable<List<Sinhvienentity>> getAllsinhvien() {
+    public Observable<List<Sinhvienentity>> getAllsinhvien() {
         return sinhvienDao.getAllsinhvien();
     }
 }
